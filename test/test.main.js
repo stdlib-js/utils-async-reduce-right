@@ -22,7 +22,7 @@
 
 var tape = require( 'tape' );
 var noop = require( '@stdlib/utils-noop' );
-var reduceRightAsync = require( './../lib/reduce_right.js' );
+var reduceRightAsync = require( './../lib' );
 
 
 // TESTS //
