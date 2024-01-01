@@ -45,30 +45,38 @@ limitations under the License.
 
 <!-- Package usage documentation. -->
 
-<section class="installation">
 
-## Installation
-
-```bash
-npm install @stdlib/utils-async-reduce-right
-```
-
-Alternatively,
-
--   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm` branch][esm-url].
--   If you are using Deno, visit the [`deno` branch][deno-url].
--   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd` branch][umd-url].
-
-The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
-
-</section>
 
 <section class="usage">
 
 ## Usage
 
+To use in Observable,
+
 ```javascript
-var reduceRightAsync = require( '@stdlib/utils-async-reduce-right' );
+reduceRightAsync = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/utils-async-reduce-right@umd/browser.js' )
+```
+
+To vendor stdlib functionality and avoid installing dependency trees for Node.js, you can use the UMD server build:
+
+```javascript
+var reduceRightAsync = require( 'path/to/vendor/umd/utils-async-reduce-right/index.js' )
+```
+
+To include the bundle in a webpage,
+
+```html
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/utils-async-reduce-right@umd/browser.js"></script>
+```
+
+If no recognized module system is present, access bundle contents via the global scope:
+
+```html
+<script type="text/javascript">
+(function () {
+    window.reduceRightAsync;
+})();
+</script>
 ```
 
 #### reduceRightAsync( collection, initial, \[options,] reducer, done )
@@ -383,7 +391,12 @@ The function accepts the same `options` as `reduceRightAsync()`.
 
 <!-- eslint no-undef: "error" -->
 
-```javascript
+```html
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<script type="text/javascript">
+(function () {
 var resolve = require( 'path' ).resolve;
 var readFile = require( '@stdlib/fs-read-file' );
 var reduceRightAsync = require( '@stdlib/utils-async-reduce-right' );
@@ -419,6 +432,11 @@ var acc = {
     'count': 0
 };
 reduceRightAsync( files, acc, read, done );
+
+})();
+</script>
+</body>
+</html>
 ```
 
 </section>
@@ -526,11 +544,11 @@ Copyright &copy; 2016-2024. The Stdlib [Authors][stdlib-authors].
 
 <!-- <related-links> -->
 
-[@stdlib/utils/async/for-each-right]: https://github.com/stdlib-js/utils-async-for-each-right
+[@stdlib/utils/async/for-each-right]: https://github.com/stdlib-js/utils-async-for-each-right/tree/umd
 
-[@stdlib/utils/async/reduce]: https://github.com/stdlib-js/utils-async-reduce
+[@stdlib/utils/async/reduce]: https://github.com/stdlib-js/utils-async-reduce/tree/umd
 
-[@stdlib/utils/reduce-right]: https://github.com/stdlib-js/utils-reduce-right
+[@stdlib/utils/reduce-right]: https://github.com/stdlib-js/utils-reduce-right/tree/umd
 
 <!-- </related-links> -->
 
